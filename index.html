@@ -176,10 +176,15 @@
         <!-- ANIMAL WITH HEART -->
         <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
             <defs>
-                <linearGradient id="fur" x1="0" x2="1">
-                    <stop offset="0" stop-color="#f7c7a1" />
-                    <stop offset="1" stop-color="#f2a97b" />
+                <linearGradient id="fur" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stop-color="#c4a484" />
+                    <stop offset="0.5" stop-color="#D5A66F" />
+                    <stop offset="1" stop-color="#d2b48c" />
                 </linearGradient>
+                <radialGradient id="snout" cx="0.5" cy="0.3">
+                    <stop offset="0" stop-color="#f0dcc8" />
+                    <stop offset="1" stop-color="#e5cfb8" />
+                </radialGradient>
                 <linearGradient id="heart" x1="0" x2="1">
                     <stop offset="0" stop-color="#ff4d7d" />
                     <stop offset="1" stop-color="#ff1f68" />
@@ -194,29 +199,73 @@
                     " fill="red" />
             <!-- Face -->
             <path d=" 
-                    M120 100 C120 60 140 40 190 40
-                    C240 40 260 60 260 100
-                    C260 140 255 170 240 190
-                    C230 200 210 210 190 210
-                    C170 210 150 200 140 190
-                    C125 170 120 140 120 100Z
+                    M190 40
+                    C170 40 152 45 138 55
+                    C128 62 120 72 118 85
+                    C116 95 116 105 116 115
+                    C116 130 118 145 122 158
+                    C126 170 135 182 145 190
+                    C155 198 168 204 180 207
+                    C184 208 187 208 190 208
+                    C193 208 196 208 200 207
+                    C212 204 225 198 235 190
+                    C245 182 254 170 258 158
+                    C262 145 264 130 264 115
+                    C264 105 264 95 262 85
+                    C260 72 252 62 242 55
+                    C228 45 210 40 190 40Z 
                     " fill="url(#fur)" />
-            <!-- Ears -->
-            <path d="M125 85 Q100 70 90 90 Q85 110 100 118 Q115 112 125 100 Z" fill="#f2a97b" />
-            <path d="M255 85 Q280 70 290 90 Q295 110 280 118 Q265 112 255 100 Z" fill="#f2a97b" />
-            <!-- Eyes -->
-            <ellipse cx="160" cy="120" rx="10" ry="12" fill="#2C2C2C" />
-            <ellipse cx="220" cy="120" rx="10" ry="12" fill="#2C2C2C" />
-            <!-- NOSE -->
-            <ellipse cx="190" cy="175" rx="15" ry="12" fill="#2C2C2C" />
-            <path d="M190 175 Q190 185 190 195" stroke="#2C2C2C" stroke-width="3" fill="none" />
+            <!-- Left Ear -->
+            <ellipse cx="120" cy="100" rx="22" ry="35" fill="#b8885a" transform="rotate(-40 120 100)" />
+            <ellipse cx="122" cy="103" rx="14" ry="24" fill="#d4a574" transform="rotate(-40 122 103)" />
+            <circle cx="115" cy="88" r="10" fill="#c9995e" opacity="0.7" />
+            <circle cx="124" cy="93" r="8" fill="#b8885a" opacity="0.6" />
 
+            <!-- Right Ear -->
+            <ellipse cx="260" cy="100" rx="22" ry="35" fill="#b8885a" transform="rotate(40 260 100)" />
+            <ellipse cx="258" cy="103" rx="14" ry="24" fill="#d4a574" transform="rotate(40 258 103)" />
+            <circle cx="265" cy="88" r="10" fill="#c9995e" opacity="0.7" />
+            <circle cx="256" cy="93" r="8" fill="#b8885a" opacity="0.6" />
+
+            <!-- Snout -->
+            <ellipse cx="190" cy="150" rx="30" ry="32" fill="url(#snout)" />
+
+            <!-- Left Eye White-->
+            <ellipse cx="163" cy="115" rx="13" ry="15" fill="white" />
+
+            <!-- Left Eye Pupil -->
+            <ellipse cx="165" cy="117" rx="9" ry="11" fill="#2C2C2C" />
+
+            <!-- Left Eye highlight -->
+            <ellipse cx="162" cy="113" r="3" fill="#white" opacity="0.9" />
+
+
+            <!-- Right Eye White-->
+            <ellipse cx="217" cy="115" rx="13" ry="15" fill="white" />
+
+            <!-- Right Eye Pupil -->
+            <ellipse cx="215" cy="117" rx="9" ry="11" fill="#2c2c2c" />
+
+            <!-- Right Eye highlight -->
+            <ellipse cx="212" cy="113" r="3" fill="#white" opacity="0.9" />
+
+            <!-- NOSE -->
+            <ellipse cx="190" cy="155" rx="15" ry="12" fill="#2c2c2c" />
+
+            <!-- SMILE -->
+            <path d="M190 160 Q185 166 180 168" stroke="#2c2c2c" stroke-width="2.5" fill="none"
+                stroke-linecap="round" />
+            <path d="M190 160 Q195 166 200 168" stroke="#2c2c2c" stroke-width="2.5" fill="none"
+                stroke-linecap="round" />
+
+            <!-- Tounge -->
+            <ellipse cx="190" cy="173" rx="8" ry="6" fill="#ff8fa3" opacity="0.8" />
 
         </svg>
 
-        <p p style="margin: 12px 0 6px; font-size: 20px; opacity: 0.85;"> Hi Carla Faye </p>
+        <p p style="margin: 12px 0 6px; font-size: 22px; opacity: 0.85; font-weight: 500;"> Hi Carla Faye </p>
         <h2 style="font-size: clamp(32px, 5vw, 52px); margin: 14px 0 20px;">will you be my valentine?</h2>
-        <p p style="margin: 6px 0 12px; font-size: 20px; opacity: 0.85;"> Roy </p>
+        <p p style="margin: 6px 0 12px; font-size: 22px; opacity: 0.85; font-weight: 500;"> Roy </p>
 
         <section class="button-zone" id="zone">
             <button id="yesBtn">Yes</button>
@@ -328,7 +377,7 @@
                 (b.top + b.height / 2) - e.clientY
             );
             if (d < 140) moveNo(e.clientX, e.clientY);
-        }); 
+        });
 
         // Mobile: move button on touchstart
         noBtn.addEventListener("touchstart", e => {
