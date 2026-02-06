@@ -106,9 +106,10 @@
             background: #e5e7eb;
             color: #111827;
         }
-        #noBtn:hover{
+
+        #noBtn:hover {
             background: #d1d5db;
-            box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
         }
 
         .hint {
@@ -170,9 +171,7 @@
                     C274 -5 294 3 294 20
                     C294 48 262 62 262 76
                     C262 62 230 48 230 20Z
-                    " fill="red" 
-                    
-                    />
+                    " fill="red" />
             <!-- Face -->
             <path d=" 
                     M120 100 C120 60 140 40 190 40
@@ -181,32 +180,23 @@
                     C230 200 210 210 190 210
                     C170 210 150 200 140 190
                     C125 170 120 140 120 100Z
-                    " 
-               fill="url(#fur)" />
+                    " fill="url(#fur)" />
             <!-- Ears -->
             <path d="M125 85 Q100 70 90 90 Q85 110 100 118 Q115 112 125 100 Z" fill="#f2a97b" />
             <path d="M255 85 Q280 70 290 90 Q295 110 280 118 Q265 112 255 100 Z" fill="#f2a97b" />
             <!-- Eyes -->
-            <ellipse cx= "160" cy="120" rx="10" ry="12" fill="#2C2C2C"/>
-            <ellipse cx= "220" cy="120" rx="10" ry="12" fill="#2C2C2C"/>
+            <ellipse cx="160" cy="120" rx="10" ry="12" fill="#2C2C2C" />
+            <ellipse cx="220" cy="120" rx="10" ry="12" fill="#2C2C2C" />
             <!-- NOSE -->
-            <ellipse cx= "190" cy="175" rx="15" ry="12" fill="#2C2C2C"/>
-            <path d="M190 175 Q190 185 190 195" stroke="#2C2C2C" stroke-width="3" fill="none"/>    
-
-            
-            <!-- 
-            <path d="
-                M190 144 C186 144 182 148 182 152
-                C182 160 190 164 190 170
-                C190 164 198 160 198 152
-                C198 148 194 144 190 144Z
-                " 
-                fill="#ff1f68" />  -->
+            <ellipse cx="190" cy="175" rx="15" ry="12" fill="#2C2C2C" />
+            <path d="M190 175 Q190 185 190 195" stroke="#2C2C2C" stroke-width="3" fill="none" />
 
 
         </svg>
 
-        <h1>Carla Faye will you be my valentine?</h1>
+        <p p style="margin: 12px 0 6px; font-size: 20px; opacity: 0.85;"> Hi Carla Faye </p>
+        <h2 style="font-size: clamp(32px, 5vw, 52px); margin: 14px 0 20px;">will you be my valentine?</h2>
+        <p p style="margin: 6px 0 12px; font-size: 20px; opacity: 0.85;"> Roy </p>
 
         <section class="button-zone" id="zone">
             <button id="yesBtn">Yes</button>
@@ -319,6 +309,30 @@
             );
             if (d < 140) moveNo(e.clientX, e.clientY);
         });
+
+        // Mobile: move button on touchstart
+        noBtn.addEventListener("touchstart", e => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            moveNo(touch.clientX, touch.clientY);
+        });
+
+        // Mobile: move on touch near the button in the zone
+        zone.addEventListener("touchstart", e => {
+            const touch = e.touches[0];
+            const b = noBtn.getBoundingClientRect();
+            const d = Math.hypot(
+                (b.left + b.width / 2) - touch.clientX,
+                (b.top + b.height / 2) - touch.clientY
+            );
+            if (d < 80) {
+                e.preventDefault();
+                moveNo(touchh.clientX, touch.clientY);
+            }
+
+
+        });
+
 
         noBtn.addEventListener("click", e => e.preventDefault());
 
